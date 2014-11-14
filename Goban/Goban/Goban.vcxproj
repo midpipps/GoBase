@@ -65,7 +65,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
-    <ClCompile Include="CommandLine.cpp" />
     <ClCompile Include="Intersection.cpp" />
     <ClCompile Include="InvalidIntersectionException.cpp" />
     <ClCompile Include="Player.cpp" />
