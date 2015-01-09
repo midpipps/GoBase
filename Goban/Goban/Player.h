@@ -67,7 +67,7 @@ namespace Goban
 		int getPlayerID() const;
 	private:
 		std::string playerName;
-		int playerID;
+		size_t playerID;
 		std::vector<Stone *> playersStones;
 		std::vector<Stone *> capturedStones;
 	};

@@ -65,6 +65,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="CommandLine.cpp" />
     <ClCompile Include="Intersection.cpp" />
     <ClCompile Include="InvalidIntersectionException.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -74,6 +75,7 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="Intersection.h" />
     <ClInclude Include="InvalidIntersectionException.h" />
+    <ClInclude Include="IRemoveDeadStones.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Stone.h" />

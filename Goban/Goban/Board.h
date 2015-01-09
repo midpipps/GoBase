@@ -68,13 +68,13 @@ namespace Goban
 		/// <param name="playerToPlay">The player object to get the stone from </param>
 		/// <param name="c">The board column of the intersection to play the stone on </param>
 		/// <param name="r">The board row of the intersection to play the stone on</param>
-		void playStone(Player * playerToPlay, int r, int c);
+		void playStone(Player * playerToPlay, size_t r, size_t c);
 	private:
-		bool isValidPosition(int, int);
+		bool isValidPosition(size_t, size_t);
 		size_t rows;
 		size_t columns;
-		std::vector<std::vector<Intersection>> intersectionMap;
-		int stoneIDCounter;
+		std::vector<std::vector<Intersection *>> intersectionMap;
+		size_t stoneIDCounter;
 	};
 }
 #endif

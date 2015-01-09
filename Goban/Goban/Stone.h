@@ -70,9 +70,9 @@ namespace Goban
 		/// <returns>the int id of the stone</returns>
 		int getStoneID() const;
 	private:
-		int playerID;
+		size_t playerID;
 		bool checked;
-		int stoneID;
+		size_t stoneID;
 	};
 }
 #endif

@@ -21,7 +21,7 @@ Goban::Player::Player(std::string name, int playersID)
 
 Goban::Player::~Player()
 {
-	for (int i = 0; i < playersStones.size(); i++)
+	for (size_t i = 0; i < playersStones.size(); i++)
 	{
 		delete playersStones.at(i);
 		playersStones.at(i) = nullptr;
