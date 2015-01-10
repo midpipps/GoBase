@@ -66,15 +66,19 @@
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="CommandLine.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Intersection.cpp" />
     <ClCompile Include="InvalidIntersectionException.cpp" />
+    <ClCompile Include="InvalidPlayerException.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Stone.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Intersection.h" />
     <ClInclude Include="InvalidIntersectionException.h" />
+    <ClInclude Include="InvalidPlayerException.h" />
     <ClInclude Include="IRemoveDeadStones.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="resource.h" />
