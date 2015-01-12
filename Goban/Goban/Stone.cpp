@@ -68,3 +68,14 @@ int Goban::Stone::getStoneID() const
 {
 	return stoneID;
 }
+
+
+bool Goban::Stone::getIsDead() const
+{
+	return dead;
+}
+
+void Goban::Stone::setIsDead(bool isDead)
+{
+	dead = isDead;
+}

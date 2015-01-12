@@ -63,10 +63,20 @@ void Goban::Game::setDeadStoneRemover(IRemoveDeadStones * theRemover)
 	deadStoneRemover = theRemover;
 }
 
+Goban::IRemoveDeadStones::deadStoneReturn Goban::Game::runDeadStoneRemover()
+{
+	int deadGroups = deadStoneRemover->AnalyzeBoard(theBoard);
+	if (deadGroups > 0 && previousPlayer < players.size() && previousPlayer >= 0)
+	{
+		deadStoneRemover->RemoveDeadStones(players.at(previousPlayer)->getPlayerID(), theBoard);
+	}
+}
+
 void Goban::Game::makeMove(int pNum, int r, int c)
 {
 	if (pNum < players.size() && pNum >= 0)
 	{
+		previousPlayer = pNum;
 		theBoard->playStone(players.at(pNum), r, c);
 	}
 	else
@@ -74,3 +84,5 @@ void Goban::Game::makeMove(int pNum, int r, int c)
 		throw InvalidPlayerException(pNum);
 	}
 }
+
+

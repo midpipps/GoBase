@@ -69,10 +69,23 @@ namespace Goban
 		/// </summary>
 		/// <returns>the int id of the stone</returns>
 		int getStoneID() const;
+
+		/// <summary>
+		/// if stone is dead returns true
+		/// </summary>
+		/// <returns>bool of the stones status</returns>
+		bool getIsDead() const;
+
+		/// <summary>
+		/// set if the stone is dead
+		/// </summary>
+		/// <param name="isDead">true for dead false for not.</param>
+		void setIsDead(bool isDead);
 	private:
 		size_t playerID;
 		bool checked;
 		size_t stoneID;
+		bool dead;
 	};
 }
 #endif

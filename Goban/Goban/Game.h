@@ -71,7 +71,7 @@ namespace Goban
 		/// <summary>
 		/// Runs the dead stone remover to remove any dead stones from the board.
 		/// </summary>
-		void runDeadStoneRemover();
+		IRemoveDeadStones::deadStoneReturn runDeadStoneRemover();
 
 		/// <summary>
 		/// Plays a move from the selected player in the selected intersection
@@ -85,6 +85,7 @@ namespace Goban
 		Board *theBoard;
 		std::vector<Player *> players;
 		IRemoveDeadStones * deadStoneRemover;
+		int previousPlayer = -1;
 	};
 }
 #endif

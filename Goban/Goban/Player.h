@@ -36,11 +36,6 @@ namespace Goban
 		/// <returns>a pointer to a new stone that the player controls</returns>
 		Stone * getNewStone();
 		/// <summary>
-		/// add the passed in stone the the players captured stones
-		/// </summary>
-		/// <param name="pstone">the stone to add to the captured stone list</param>
-		void addCapturedStone(Stone *);
-		/// <summary>
 		/// get a count of captured stones
 		/// </summary>
 		/// <returns>the int number of stones captured</returns>
@@ -69,7 +64,6 @@ namespace Goban
 		std::string playerName;
 		size_t playerID;
 		std::vector<Stone *> playersStones;
-		std::vector<Stone *> capturedStones;
 	};
 }
 #endif

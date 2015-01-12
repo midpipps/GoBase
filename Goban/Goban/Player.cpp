@@ -34,14 +34,17 @@ Goban::Stone * Goban::Player::getNewStone()
 	return playersStones.at(playersStones.size() - 1);
 }
 
-void Goban::Player::addCapturedStone(Stone * thestone)
-{
-	capturedStones.push_back(thestone);
-}
-
 int Goban::Player::getCapturedStoneCount() const
 {
-	return capturedStones.size();
+	size_t capturedStones = 0;
+	for (size_t i = 0; i < playersStones.size(); i++)
+	{
+		if (playersStones.at(i)->getIsDead())
+		{
+			capturedStones += 1;
+		}
+	}
+	return capturedStones;
 }
 
 void Goban::Player::setPlayerName(std::string newName)
