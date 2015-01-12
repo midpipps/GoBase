@@ -24,9 +24,9 @@ namespace Goban
 		/// Constuctor sets the number of players and the board size in rows and columns
 		/// </summary>
 		/// <param name="num">number of players</param>
-		/// <param name="c">number of columns for the board</param>
 		/// <param name="r">number of rows for the board</param>
-		Game(int num, size_t c, size_t r);
+		/// <param name="c">number of columns for the board</param>
+		Game(int num, size_t r, size_t c);
 
 		/// <summary>
 		/// Destructor for the class
@@ -80,6 +80,14 @@ namespace Goban
 		/// <param name="r">number of rows for the board</param>
 		/// <param name="c">number of columns for the board</param>
 		void makeMove(int pNum, int r, int c);
+
+		/// <summary>
+		/// returns the stone at position or nullptr if there is no stone there
+		/// </summary>
+		/// <param name="r">number of rows for the board</param>
+		/// <param name="c">number of columns for the board</param>
+		/// <returns>the stone from that intersection if there is one</returns>
+		const Stone * getStone(int r, int c);
 
 	private:
 		Board *theBoard;

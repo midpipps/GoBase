@@ -4,13 +4,15 @@
 Goban::Game::Game(int num, size_t size)
 {
 	theBoard = new Board(size);
+	theBoard->createBoard();
 	players = std::vector<Player *>(num);
 	deadStoneRemover = nullptr;
 }
 
-Goban::Game::Game(int num, size_t c, size_t r)
+Goban::Game::Game(int num, size_t r, size_t c)
 {
 	theBoard = new Board(r, c);
+	theBoard->createBoard();
 	players = std::vector<Player *>(num);
 	deadStoneRemover = nullptr;
 }
@@ -66,10 +68,12 @@ void Goban::Game::setDeadStoneRemover(IRemoveDeadStones * theRemover)
 Goban::IRemoveDeadStones::deadStoneReturn Goban::Game::runDeadStoneRemover()
 {
 	int deadGroups = deadStoneRemover->AnalyzeBoard(theBoard);
+	IRemoveDeadStones::deadStoneReturn returnStones;
 	if (deadGroups > 0 && previousPlayer < players.size() && previousPlayer >= 0)
 	{
-		deadStoneRemover->RemoveDeadStones(players.at(previousPlayer)->getPlayerID(), theBoard);
+		returnStones = deadStoneRemover->RemoveDeadStones(players.at(previousPlayer)->getPlayerID(), theBoard);
 	}
+	return returnStones;
 }
 
 void Goban::Game::makeMove(int pNum, int r, int c)
@@ -82,6 +86,18 @@ void Goban::Game::makeMove(int pNum, int r, int c)
 	else
 	{
 		throw InvalidPlayerException(pNum);
+	}
+}
+
+const Goban::Stone * Goban::Game::getStone(int r, int c)
+{
+	if (theBoard->getIntersection(r, c)->hasStone())
+	{
+		return theBoard->getIntersection(r, c)->getStone();
+	}
+	else
+	{
+		return nullptr;
 	}
 }
 
